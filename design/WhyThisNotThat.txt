@@ -1,0 +1,7 @@
+When storing data, Redis stores data as specific data types, whereas Memcached only stores data as strings.
+Because of this, Redis can change data in place without having to re-upload the entire data value.
+This reduces network overhead.
+
+Memcached stores key-value pairs as a String and has a 1MB size limit per value.
+However, Redis also supports other data structures like list, set, and hash,
+and can store values of up to 512MB in size.

@@ -12,7 +12,6 @@ sudo kill -9 $(sudo lsof -t -i:9031)
 # Eureka
 http://localhost:8761/
 
-
 # Cloud Config Server
 http://localhost:8888/
 

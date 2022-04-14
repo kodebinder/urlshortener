@@ -1,0 +1,6 @@
+System Design
+https://app.diagrams.net/#G1S64lRURTeBwdn1cdM_3W78Pg5Gn6qtmU
+
+Database Design
+https://app.diagrams.net/#G1diJnaCbrRuZFH-1R_mardLNici31XJou
+

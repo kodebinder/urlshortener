@@ -7,20 +7,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="urlservice" />
         <module name="cloudgateway" />
+        <module name="userservice" />
+        <module name="urlservice" />
         <module name="cloudconfigserver" />
         <module name="hystrixdashboard" />
         <module name="serviceregistry" />
-        <module name="userservice" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kafka" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cloudconfigserver" options="-parameters" />
       <module name="cloudgateway" options="-parameters" />
       <module name="hystrixdashboard" options="-parameters" />
+      <module name="kafka" options="-parameters" />
       <module name="serviceregistry" options="-parameters" />
       <module name="urlservice" options="-parameters" />
       <module name="userservice" options="-parameters" />

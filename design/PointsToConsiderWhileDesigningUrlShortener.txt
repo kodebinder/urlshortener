@@ -1,0 +1,73 @@
+Points to consider:
+1. Requirements
+2. API Creation
+3. Database Design
+4. Logic to solve problem
+5. System workflow
+6. Load Balancing
+7. Caching
+8. Sharding
+9. Indexes
+10. Messaging Queue (Kafka)
+11. Hashing (Consistent Hashing)
+12. LRU
+13. Hadoop
+14. Cassandra
+15. Microservices
+
+1. Requirements
+OriginalUrl <-> ShortUrl
+User passes expiration time for url
+REST API
+
+2. API Creation
+http://shorturl.com/api/v1/shorturl
+POST
+createUrl(originalUrl,userId,expirationTime,customUrl)
+GET
+getUrl(shortUrl)
+
+3. Database Design (To avoid redundancy or duplication)
+User (user_id(pk),username,password,email,contact,countOfUrlCreatedByUser)
+Url (short_url(pk),original_url,expiration_time,custom_url,user_id)
+Since, some fields (expiration_time,custom_url) are not defined for every url we will go with NoSQL
+Since multiple users will hit our API and cassandra is divided into regions, fast access/retrieval.
+
+4. Logic to solve problem
+4.1 Using MD5
+Generate hash using MD5 or SHA256 algorithm from original url.
+Encode hash using Base62(A-Z, a-z, 0-9) = (26+26+10) or Base64(A-Z, a-z, 0-9, -, .)
+Since MD5 algorithm generate 128-bit hash which is very long. (it can have duplicate for 6 characters)
+Base64 = 64^6 = 68 billion String
+
+url(www.google.com) -> hash(url) -> 128 bit string (01...0110) -> encode(128 bit string) -> A01eZxB9
+
+4.2 Using key generator
+
+6. Load Balancer
+Round Robin
+Based on Load
+HA Proxy
+
+7. Caching
+Memcache (Most Frequently used Url put in cache)
+LRU (Least Recently Used Url evict from cache)
+
+8. Data Partitioning / Sharding
+Since one DB cannot handle all data we will distribute data across db
+Range Based Sharding (A-M, N-Z) (Can overflow if more url starting with a specific character)
+Hash Based (Consistent Hashing) (preferred)
+
+9. Indexes
+On which column user will query most user(user_id) url(short_url)
+Mongo implicitly performs indexes for primary key column
+
+10. Messaging Queue (Kafka)
+Analytics, asynchronously persist data in db
+
+13. Hadoop
+Storing/Dumping analytics data into HDFS
+
+14. Cassandra
+
+15. Microservices

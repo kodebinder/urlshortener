@@ -22,6 +22,9 @@ http://localhost:8765/
 # Hystrix
 http://localhost:9295/hystrix
 
+# Hystrix Stream and Hystrix Dashboard
+http://localhost:8765/actuator/hystrix.stream
+
 # Url Service
 http://localhost:9021/
 

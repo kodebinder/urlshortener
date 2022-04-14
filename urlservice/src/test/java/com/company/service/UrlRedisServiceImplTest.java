@@ -43,7 +43,7 @@ class UrlRedisServiceImplTest {
     void testCreate_shouldThrowBadArgumentsExceptionWhenEmptyUrlIsPassed() {
         Assertions.assertThatThrownBy(() -> urlRedisServiceImpl.createShortUrl(getInvalidMockUserDto()))
                 .isInstanceOf(UrlRequestException.class)
-                .hasMessageContaining("Invalid urlName: " + getInvalidMockUser().getUrlName());
+                .hasMessageContaining("Invalid urlName : " + getInvalidMockUser().getUrlName());
     }
 
     @Test
@@ -64,7 +64,7 @@ class UrlRedisServiceImplTest {
         Mockito.when(valueOperations.get(Mockito.anyString())).thenReturn(null);
         Assertions.assertThatThrownBy(() -> urlRedisServiceImpl.getLongUrl(""))
                 .isInstanceOf(UrlRequestException.class)
-                .hasMessageContaining("There is no shorter URL for urlId: " + getInvalidMockUser().getUrlId());
+                .hasMessageContaining("There is no shorter URL for urlId : " + getInvalidMockUser().getUrlId());
     }
 
     @Test
@@ -73,7 +73,7 @@ class UrlRedisServiceImplTest {
         Mockito.when(valueOperations.get(Mockito.anyString())).thenReturn(null);
         Assertions.assertThatThrownBy(() -> urlRedisServiceImpl.getLongUrl(getValidMockUser().getUrlId()))
                 .isInstanceOf(UrlRequestException.class)
-                .hasMessageContaining("There is no shorter URL for urlId: " + getInvalidMockUser().getUrlId());
+                .hasMessageContaining("There is no shorter URL for urlId : " + getInvalidMockUser().getUrlId());
     }
 
     private UrlDto getValidMockUserDto() {

@@ -1,0 +1,93 @@
+version : '3'
+services :
+  mongo:
+    image: mongo
+    restart: always
+    network_mode : host
+
+  serviceregistry:
+    image : serviceregistry
+    build : serviceregistry
+    restart : always
+    container_name : serviceregistry
+    ports :
+      - "8761:8761"
+    depends_on:
+      - mongo
+    expose:
+      - "8761"
+
+  cloudconfigserver:
+    image: cloudconfigserver
+    build: cloudconfigserver
+    restart: always
+    container_name: cloudconfigserver
+    depends_on:
+      - mongo
+      - serviceregistry
+    ports:
+      - "8888:8888"
+    expose:
+      - "8888"
+
+  cloudgateway:
+    image : cloudgateway
+    build : cloudgateway
+    restart : always
+    container_name : cloudgateway
+    depends_on:
+      - mongo
+      - serviceregistry
+      - cloudconfigserver
+    ports :
+      - "8765:8765"
+    expose:
+      - "8765"
+
+  hystrixdashboard:
+    image: hystrixdashboard
+    build: hystrixdashboard
+    restart: always
+    container_name: hystrixdashboard
+    depends_on:
+      - mongo
+      - serviceregistry
+      - cloudconfigserver
+      - cloudgateway
+      - urlservice
+      - userservice
+    ports:
+      - "9295:9295"
+    expose:
+      - "9295"
+
+  urlservice:
+    image : urlservice
+    build : urlservice
+    restart : always
+    container_name : urlservice
+    depends_on:
+      - mongo
+      - serviceregistry
+      - cloudconfigserver
+      - cloudgateway
+    ports :
+      - "9021:9021"
+    expose:
+      - "9021"
+
+  userservice:
+    image : userservice
+    build : userservice
+    restart : always
+    container_name : userservice
+    depends_on:
+      - mongo
+      - serviceregistry
+      - cloudconfigserver
+      - cloudgateway
+      - urlservice
+    ports :
+      - "9031:9031"
+    expose:
+      - "9031"

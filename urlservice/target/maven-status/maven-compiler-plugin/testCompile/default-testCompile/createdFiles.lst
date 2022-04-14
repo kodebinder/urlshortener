@@ -1,0 +1,8 @@
+com/company/configuration/UrlConfigurationImplTest.class
+com/company/resource/UrlRedisResourceTest.class
+com/company/resource/UrlMongoResourceTest.class
+com/company/service/UrlMongoServiceImplTest.class
+com/company/service/UrlRedisServiceImplTest.class
+com/company/validator/UrlValidatorImplTest.class
+com/company/UrlShortenerApplicationTest.class
+com/company/exception/UrlExceptionHandlerTest.class

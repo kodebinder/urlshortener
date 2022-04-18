@@ -1,5 +1,5 @@
 server:
-  port: 9021
+  port: 9031
   error:
     include-message: always
     include-stacktrace: always
@@ -10,6 +10,8 @@ spring:
     name: userservice
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+  kafka:
+    bootstrap-servers: localhost:9092
   zipkin:
     base-url: http://127.0.0.1:9411/
   #  datasource:

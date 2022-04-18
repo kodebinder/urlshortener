@@ -1,12 +1,14 @@
 com/company/configuration/UrlConfigurationImpl.class
 com/company/resource/UrlResource.class
 com/company/service/UrlMongoService.class
+com/company/configuration/KafkaProducerConfiguration.class
 com/company/exception/UrlRequestException.class
 com/company/constant/UrlConstants$1.class
 com/company/dto/UrlDto.class
 com/company/configuration/UrlConfiguration.class
 com/company/helper/UrlHelper.class
 com/company/constant/UrlConstants.class
+com/company/configuration/RestTemplateConfiguration.class
 com/company/validator/UrlValidator.class
 com/company/service/UrlMongoServiceImpl.class
 com/company/service/UrlRedisServiceImpl.class
@@ -21,4 +23,6 @@ com/company/validator/UrlValidatorImpl.class
 com/company/dto/UrlDto$UrlDtoBuilder.class
 com/company/service/UrlRedisService.class
 com/company/resource/UrlRedisResource.class
+com/company/resource/UrlKafkaResource.class
+com/company/configuration/KafkaTopicConfiguration.class
 com/company/repository/UrlMongoRepository.class

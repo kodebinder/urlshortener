@@ -5,3 +5,9 @@ This reduces network overhead.
 Memcached stores key-value pairs as a String and has a 1MB size limit per value.
 However, Redis also supports other data structures like list, set, and hash,
 and can store values of up to 512MB in size.
+
+RabbitMQ vs Kafka Event Driven Architecture
+RabbitMQ
+Can be Synchronous or Asynchronous
+Kafka
+Retention of Messages

@@ -1,5 +1,7 @@
+/Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/configuration/RestTemplateConfiguration.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/constant/UrlConstants.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/service/UrlMongoServiceImpl.java
+/Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/resource/UrlKafkaResource.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/validator/UrlValidatorImpl.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/resource/UrlMongoResource.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/repository/UrlMongoRepository.java
@@ -11,8 +13,10 @@
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/exception/UrlExceptionHandler.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/dto/UrlDto.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/configuration/UrlConfigurationImpl.java
+/Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/configuration/KafkaTopicConfiguration.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/exception/UrlRequestException.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/validator/UrlValidator.java
+/Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/configuration/KafkaProducerConfiguration.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/configuration/UrlConfiguration.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/service/UrlRedisService.java
 /Users/pushkarchauhan91/Documents/intellij/wissen/parent/urlservice/src/main/java/com/company/resource/UrlRedisResource.java

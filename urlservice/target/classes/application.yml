@@ -1,5 +1,5 @@
 server:
-  port: 9031
+  port: 9021
   error:
     include-message: always
     include-stacktrace: always
@@ -10,6 +10,8 @@ spring:
     name: urlservice
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+  kafka:
+    bootstrap-servers: localhost:9092
   zipkin:
     base-url: http://127.0.0.1:9411/
 #    driver-class-name: com.mysql.cj.jdbc.Driver
@@ -32,4 +34,3 @@ springdoc:
   api-docs:
     enabled: true
     path: /url-docs
-

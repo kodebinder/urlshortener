@@ -1,5 +1,5 @@
 #POST:
-http://localhost:9031/api/v1/urls
+http://localhost:9021/api/v1/urls
 Request Body:
 {
 "urlId":1,
@@ -23,15 +23,15 @@ Response:
 Status : 201 Created
 
 #GET
-http://localhost:9031/api/v1/urls/fd069fac
+http://localhost:9021/api/v1/urls/fd069fac
 
 #Exception:
-http://localhost:9191/api/redis/v1/4d4f2dca779797979
+http://localhost:9021/api/redis/v1/4d4f2dca779797979
 
 ---------------------------------------------------------------------
 
 #POST:
-http://localhost:9031/api/v2/urls
+http://localhost:9021/api/v2/urls
 Request Body:
 {
 "urlId":1,
@@ -55,7 +55,41 @@ Response:
 Status : 201 Created
 
 #GET
-http://localhost:9031/api/v2/urls/50328aa4
+http://localhost:9021/api/v2/urls/50328aa4
 
 #Exception:
-http://localhost:9191/api/mongo/v1/50328aa46868686
+http://localhost:9021/api/mongo/v1/50328aa46868686
+
+---------------------------------------------------------------------
+
+#POST:
+http://localhost:9021/api/v3/urls
+Request Body:
+{
+"urlId":1,
+"urlName":"https://www.google.com",
+"email":"pushkarchauhan91@gmail.com",
+"userName":"pushkar6891",
+"password":"Welcome@123",
+"phoneNumber":"9826396465"
+}
+
+Response:
+{
+"id": 0,
+"urlId": "50328aa4",
+"urlName": "https://www.google.com",
+"email": "pushkarchauhan91@gmail.com",
+"userName": "pushkar6891",
+"password": "Welcome@123",
+"phoneNumber": "9826396465"
+}
+Status : 201 Created
+
+#GET
+http://localhost:9021/api/v2/urls/50328aa4
+
+#Exception:
+http://localhost:9021/api/mongo/v1/50328aa46868686
+
+---------------------------------------------------------------------

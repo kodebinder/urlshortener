@@ -29,3 +29,6 @@ http://localhost:9021/
 
 # User Service
 http://localhost:9031/
+
+# Zipkin (Distributed Tracing)
+http://localhost:9411/zipkin/

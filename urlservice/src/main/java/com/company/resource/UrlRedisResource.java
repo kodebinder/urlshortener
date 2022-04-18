@@ -14,7 +14,7 @@ import java.net.URI;
 /**
  * @author pushkar.chauhan@wissen.com
  */
-@CrossOrigin(origins = "http://localhost:9191")
+@CrossOrigin(origins = "http://localhost:9021")
 @RestController
 @RequestMapping("/api/v2")
 @Slf4j

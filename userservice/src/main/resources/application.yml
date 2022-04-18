@@ -14,11 +14,10 @@ spring:
     bootstrap-servers: localhost:9092
   zipkin:
     base-url: http://127.0.0.1:9411/
-  #  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    username: root
-#    url: 'jdbc:mysql://localhost:3306/user'
-#    password: Welcome@123
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    username: root
+  #    url: 'jdbc:mysql://localhost:3306/user'
+  #    password: Welcome@123
   jpa:
     properties:
       hibernate:

@@ -4,6 +4,7 @@ import com.company.dto.UrlDto;
 import com.company.exception.UrlRequestException;
 import com.company.service.UrlMongoService;
 import com.company.validator.UrlValidatorImpl;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,7 +43,7 @@ public class UrlKafkaResource {
         if (!urlValidatorImpl.validatePostRequestInputParameters(urlDto)) {
             throw new UrlRequestException("Bad Request Exception is thrown for url : " + urlDto);
         }
-        kafkaTemplate.send("url", urlDto.toString());
+        kafkaTemplate.send("url", new Gson().toJson(urlDto));
         UrlDto shortUrl = urlMongoService.createShortUrl(urlDto);
         log.info("URL retrieved from redis service : {}", shortUrl);
         return ResponseEntity.status(HttpStatus.CREATED).body(shortUrl);

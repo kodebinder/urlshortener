@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.math.BigInteger;
 
 /**
  * @author pushkar.chauhan@wissen.com
@@ -17,7 +18,7 @@ import javax.validation.constraints.Size;
 @Data
 @NoArgsConstructor
 public class UrlDto {
-    private long id;
+    private BigInteger id;
     private String urlId;
 
     @NotEmpty

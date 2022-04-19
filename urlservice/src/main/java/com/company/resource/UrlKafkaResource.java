@@ -2,6 +2,8 @@ package com.company.resource;
 
 import com.company.dto.UrlDto;
 import com.company.exception.UrlRequestException;
+import com.company.helper.UrlHelper;
+import com.company.response.UrlResponse;
 import com.company.service.UrlMongoService;
 import com.company.validator.UrlValidatorImpl;
 import com.google.gson.Gson;
@@ -39,14 +41,15 @@ public class UrlKafkaResource {
      * @return urlId corresponding to passed urlName
      */
     @PostMapping("/urls")
-    public ResponseEntity<UrlDto> createShortUrl(@RequestBody UrlDto urlDto) {
+    public ResponseEntity<UrlResponse> createShortUrl(@RequestBody UrlDto urlDto) {
         if (!urlValidatorImpl.validatePostRequestInputParameters(urlDto)) {
             throw new UrlRequestException("Bad Request Exception is thrown for url : " + urlDto);
         }
         kafkaTemplate.send("url", new Gson().toJson(urlDto));
         UrlDto shortUrl = urlMongoService.createShortUrl(urlDto);
-        log.info("URL retrieved from redis service : {}", shortUrl);
-        return ResponseEntity.status(HttpStatus.CREATED).body(shortUrl);
+        log.info("URL retrieved from kafka : {}", shortUrl);
+        UrlResponse urlResponse = UrlHelper.mapDtoToResponse(shortUrl);
+        return ResponseEntity.status(HttpStatus.CREATED).body(urlResponse);
     }
 
 }

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.company.ServiceRegistryApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.218 s - in com.company.ServiceRegistryApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 31.203 s - in com.company.ServiceRegistryApplicationTests

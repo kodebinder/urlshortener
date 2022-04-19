@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.math.BigInteger;
 
 /**
  * @author pushkar.chauhan@wissen.com
@@ -22,11 +23,8 @@ public class Url implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private long id;
+    private BigInteger id;
     private String urlId;
     private String urlName;
-    private String email;
     private String userName;
-    private String password;
-    private String phoneNumber;
 }

@@ -99,10 +99,7 @@ class UrlMongoServiceImplTest {
         return Url.builder()
                 .urlId(String.valueOf(UrlConstants.URL_ID))
                 .urlName(String.valueOf(UrlConstants.URL_NAME))
-                .email(String.valueOf(UrlConstants.EMAIL))
                 .userName(String.valueOf(UrlConstants.USERNAME))
-                .password(String.valueOf(UrlConstants.PASSWORD))
-                .phoneNumber(String.valueOf(UrlConstants.PHONE_NUMBER))
                 .build();
     }
 
@@ -110,10 +107,7 @@ class UrlMongoServiceImplTest {
         return Url.builder()
                 .urlId("")
                 .urlName(null)
-                .email(String.valueOf(UrlConstants.EMAIL))
                 .userName(String.valueOf(UrlConstants.USERNAME))
-                .password(String.valueOf(UrlConstants.PASSWORD))
-                .phoneNumber(String.valueOf(UrlConstants.PHONE_NUMBER))
                 .build();
     }
 

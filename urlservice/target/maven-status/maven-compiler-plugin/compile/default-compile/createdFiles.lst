@@ -7,6 +7,7 @@ com/company/constant/UrlConstants$1.class
 com/company/dto/UrlDto.class
 com/company/configuration/UrlConfiguration.class
 com/company/helper/UrlHelper.class
+com/company/response/UrlResponse.class
 com/company/constant/UrlConstants.class
 com/company/configuration/RestTemplateConfiguration.class
 com/company/validator/UrlValidator.class
@@ -21,6 +22,7 @@ com/company/entity/Url$UrlBuilder.class
 com/company/validator/UrlValidator$ValidationResult.class
 com/company/validator/UrlValidatorImpl.class
 com/company/dto/UrlDto$UrlDtoBuilder.class
+com/company/response/UrlResponse$UrlResponseBuilder.class
 com/company/service/UrlRedisService.class
 com/company/resource/UrlRedisResource.class
 com/company/resource/UrlKafkaResource.class

@@ -2,6 +2,7 @@ package com.company.helper;
 
 import com.company.dto.UrlDto;
 import com.company.entity.Url;
+import com.company.response.UrlResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -40,5 +41,19 @@ public class UrlHelper {
         return modelMapper.map(urlDto, Url.class);
     }
 
+    /**
+     * Mapping DTO to Response
+     *
+     * @param urlDto urlDto
+     * @return UrlResponse
+     */
+    public static UrlResponse mapDtoToResponse(UrlDto urlDto) {
+        UrlResponse urlResponse = new UrlResponse();
+        urlResponse.setId(urlDto.getId());
+        urlResponse.setUrlId(urlDto.getUrlId());
+        urlResponse.setUrlName(urlDto.getUrlName());
+        urlResponse.setUserName(urlDto.getUserName());
+        return urlResponse;
+    }
 
 }

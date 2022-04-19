@@ -40,3 +40,10 @@ out/
 
 ### VS Code ###
 .vscode/
+
+.classpath
+.project
+.settings/
+target/
+*/target/*
+*/target/**

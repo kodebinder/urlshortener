@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
@@ -52,13 +53,10 @@ public class UrlMongoServiceImpl implements UrlMongoService {
                 url = optionalUrl.get();
                 log.info("Fetched Url : {}", url);
             } else {
-                url.setId(urlMongoRepository.findAll().size() + 1);
+                url.setId(new BigInteger(String.valueOf(urlMongoRepository.findAll().size() + 1)));
                 url.setUrlId(urlId);
                 url.setUrlName(urlDto.getUrlName());
-                url.setEmail(urlDto.getEmail());
                 url.setUserName(urlDto.getUserName());
-                url.setPassword(urlDto.getPassword());
-                url.setPhoneNumber(urlDto.getPhoneNumber());
             }
 
             urlMongoRepository.save(url);

@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
+import java.util.Optional;
+
 /**
  * @author pushkar.chauhan@wissen.com
  */
@@ -26,11 +29,21 @@ public class UserMongoServiceImpl implements UserMongoService {
 
     /**
      * @param urlDto urlDto passed by user in HTTP Request Body
-     * @return void
      */
     @Transactional
     public void saveUser(UrlDto urlDto) {
         User user = UserHelper.mapUrlDtoToUserEntity(urlDto);
+        Optional<User> optionalUser = userMongoRepository.findByUserName(user.getUserName());
+        if (optionalUser.isPresent()) {
+            user = optionalUser.get();
+            log.info("Fetched User : {}", user);
+        } else {
+            user.setId(new BigInteger(String.valueOf(userMongoRepository.findAll().size() + 1)));
+            user.setEmail(urlDto.getEmail());
+            user.setUserName(urlDto.getUserName());
+            user.setPassword(urlDto.getPassword());
+            user.setPhoneNumber(urlDto.getPhoneNumber());
+        }
         userMongoRepository.save(user);
         log.info("Persisted user : {}", user);
     }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -46,6 +47,10 @@ public class UserMongoServiceImpl implements UserMongoService {
         }
         userMongoRepository.save(user);
         log.info("Persisted user : {}", user);
+    }
+
+    public List<User> findAllUsers(){
+        return userMongoRepository.findAll();
     }
 
 }

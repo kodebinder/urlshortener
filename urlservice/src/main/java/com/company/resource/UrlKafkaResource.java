@@ -13,12 +13,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+
 /**
  * @author pushkar.chauhan@wissen.com
  */
-@CrossOrigin(origins = "http://localhost:9021")
+@CrossOrigin(origins = {"http://localhost:9021","http://localhost:8765"})
 @RestController
-@RequestMapping("/api/v3")
 @Slf4j
 public class UrlKafkaResource {
 
@@ -50,6 +51,21 @@ public class UrlKafkaResource {
         log.info("URL retrieved from kafka : {}", shortUrl);
         UrlResponse urlResponse = UrlHelper.mapDtoToResponse(shortUrl);
         return ResponseEntity.status(HttpStatus.CREATED).body(urlResponse);
+    }
+
+    /**
+     * @param urlId urlId passed by user
+     * @return void
+     */
+    @GetMapping("/urls/{urlId}")
+    public ResponseEntity<Void> getLongUrl(@PathVariable String urlId) {
+        UrlDto longUrlDetails = new UrlDto();
+        UrlDto urlDetailsDto = UrlDto.builder().urlId(urlId).build();
+        if (urlValidatorImpl.validateGetRequestInputParameters(urlDetailsDto)) {
+            longUrlDetails = urlMongoService.getLongUrl(urlId);
+            log.info("URL Details retrieved from service : {}", longUrlDetails);
+        }
+        return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(longUrlDetails.getUrlName())).build();
     }
 
 }

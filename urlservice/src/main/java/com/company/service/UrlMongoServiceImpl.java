@@ -57,7 +57,7 @@ public class UrlMongoServiceImpl implements UrlMongoService {
                 url.setId(new BigInteger(String.valueOf(urlMongoRepository.findAll().size() + 1)));
                 url.setUrlId(urlId);
                 url.setUrlName(urlDto.getUrlName());
-                url.setShortUrlName(UrlConstants.URL_KAFKA_GET_URL +"/"+urlId);
+                url.setShortUrlName(UrlConstants.PREFIX_GET_SHORT_URL + "/" + urlId);
                 url.setUserName(urlDto.getUserName());
             }
 
@@ -72,7 +72,6 @@ public class UrlMongoServiceImpl implements UrlMongoService {
     }
 
     /**
-     *
      * @param urlId urlId passed by user
      * @return UrlDto
      */

@@ -93,3 +93,54 @@ http://localhost:9021/api/v2/urls/50328aa4
 http://localhost:9021/api/mongo/v1/50328aa46868686
 
 ---------------------------------------------------------------------
+#POST:
+http://localhost:8765/urls
+Request Body:
+{
+"urlName":"https://www.google.com/?id=101",
+"email":"pushkarchauhan91@gmail.com",
+"userName":"pushkar123",
+"password":"Welcome@123",
+"phoneNumber":"9826396465"
+}
+
+Response:
+{
+"id": 1,
+"urlId": "44d91984",
+"urlName": "https://www.google.com/?id=101099",
+"shortUrlName": "http://localhost:8765/urls/44d91984",
+"userName": "pushkar123"
+}
+Status : 201 Created
+
+#GET
+http://localhost:8765/urls/44d91984
+
+#GET
+http://localhost:8765/users
+
+#Exception:
+http://localhost:8765/urls/44d91984123456789
+{
+"message": "Bad Request Exception is thrown : URL_ID_NOT_VALID",
+"httpStatus": "BAD_REQUEST",
+"localDateTime": {
+"year": 2022,
+"month": "APRIL",
+"nano": 87000000,
+"monthValue": 4,
+"dayOfMonth": 20,
+"hour": 16,
+"minute": 52,
+"second": 58,
+"dayOfWeek": "WEDNESDAY",
+"dayOfYear": 110,
+"chronology": {
+"id": "ISO",
+"calendarType": "iso8601"
+}
+}
+}
+
+---------------------------------------------------------------------

@@ -50,7 +50,6 @@ public class UrlMongoResource implements UrlResource {
      * @param urlId urlId passed by user
      * @return void
      */
-
     @GetMapping("/urls/{urlId}")
     @Override
     public ResponseEntity<Void> getLongUrl(@PathVariable String urlId) {

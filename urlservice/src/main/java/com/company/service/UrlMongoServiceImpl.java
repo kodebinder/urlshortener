@@ -1,5 +1,6 @@
 package com.company.service;
 
+import com.company.constant.UrlConstants;
 import com.company.dto.UrlDto;
 import com.company.entity.Url;
 import com.company.exception.UrlRequestException;
@@ -56,6 +57,7 @@ public class UrlMongoServiceImpl implements UrlMongoService {
                 url.setId(new BigInteger(String.valueOf(urlMongoRepository.findAll().size() + 1)));
                 url.setUrlId(urlId);
                 url.setUrlName(urlDto.getUrlName());
+                url.setShortUrlName(UrlConstants.URL_KAFKA_GET_URL +"/"+urlId);
                 url.setUserName(urlDto.getUserName());
             }
 

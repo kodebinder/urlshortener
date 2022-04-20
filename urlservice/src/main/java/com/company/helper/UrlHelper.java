@@ -52,6 +52,7 @@ public class UrlHelper {
         urlResponse.setId(urlDto.getId());
         urlResponse.setUrlId(urlDto.getUrlId());
         urlResponse.setUrlName(urlDto.getUrlName());
+        urlResponse.setShortUrlName(urlDto.getShortUrlName());
         urlResponse.setUserName(urlDto.getUserName());
         return urlResponse;
     }

@@ -5,6 +5,7 @@ package com.company.constant;
  */
 public enum UrlConstants {
 	APP_NAME,
+	URL_KAFKA_GET_URL,
 	URL_MONGO_GET_URL ,
 	URL_MONGO_POST_URL ,
 	URL_REDIS_GET_URL ,
@@ -20,6 +21,7 @@ public enum UrlConstants {
 	public String toString() {
 		switch(this) {
 			case APP_NAME: return "UrlShortener";
+			case URL_KAFKA_GET_URL: return "http://localhost:9021/api/v2/urls/";
 			case URL_MONGO_GET_URL: return "/api/v1/urls/{id}";
 			case URL_MONGO_POST_URL: return "/api/v1/urls";
 			case URL_REDIS_GET_URL: return "/api/v2/urls/{id}";

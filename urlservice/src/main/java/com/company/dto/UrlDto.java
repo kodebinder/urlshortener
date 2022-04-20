@@ -25,6 +25,9 @@ public class UrlDto {
     @Size(min=4,message = "url must be minimum 4 characters")
     private String urlName;
 
+    @NotEmpty
+    private String shortUrlName;
+
     @Email(message = "invalid email address passed")
     private String email;
 

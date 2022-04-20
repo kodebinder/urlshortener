@@ -34,7 +34,7 @@ class UrlValidatorImplTest {
         assertThrows(UrlRequestException.class,
                 () -> urlValidatorImpl.validateGetRequestInputParameters(new UrlDto(new BigInteger("123"),
                         "https://example.org/example", "https://example.org/example", "https://example.org/example", "jane",
-                        "https://example.org/example", "https://example.org/example")));
+                        "https://example.org/example", "https://example.org/example", "https://example.org/example")));
     }
 
     @Test
@@ -42,7 +42,7 @@ class UrlValidatorImplTest {
         assertThrows(UrlRequestException.class,
                 () -> urlValidatorImpl.validateGetRequestInputParameters(
                         new UrlDto(new BigInteger("123"), "42", "https://example.org/example", "https://example.org/example", "jane",
-                                "https://example.org/example", "https://example.org/example")));
+                                "https://example.org/example", "https://example.org/example", "https://example.org/example")));
     }
 
 
@@ -51,27 +51,27 @@ class UrlValidatorImplTest {
         assertThrows(IllegalStateException.class,
                 () -> urlValidatorImpl.validatePostRequestInputParameters(new UrlDto(new BigInteger("123"),
                         "https://example.org/example", "https://example.org/example", "https://example.org/example", "jane",
-                        "https://example.org/example", "https://example.org/example")));
+                        "https://example.org/example", "https://example.org/example", "https://example.org/example")));
         assertThrows(IllegalStateException.class,
                 () -> urlValidatorImpl.validatePostRequestInputParameters(
                         new UrlDto(new BigInteger("123"), "https://example.org/example", "UUU", "https://example.org/example", "jane",
-                                "https://example.org/example", "https://example.org/example")));
+                                "https://example.org/example", "https://example.org/example", "https://example.org/example")));
         assertThrows(IllegalStateException.class,
                 () -> urlValidatorImpl.validatePostRequestInputParameters(new UrlDto(new BigInteger("123"),
                         "https://example.org/example", "", "https://example.org/example", "jane",
-                        "https://example.org/example", "https://example.org/example")));
+                        "https://example.org/example", "https://example.org/example", "https://example.org/example")));
         assertThrows(IllegalStateException.class,
                 () -> urlValidatorImpl.validatePostRequestInputParameters(
                         new UrlDto(new BigInteger("123"), "https://example.org/example", "https://example.org/example",
-                                "jane.doe@example.org", "jane", "https://example.org/example", "https://example.org/example")));
+                                "jane.doe@example.org", "jane", "https://example.org/example", "https://example.org/example", "https://example.org/example")));
         assertThrows(IllegalStateException.class,
                 () -> urlValidatorImpl.validatePostRequestInputParameters(new UrlDto(new BigInteger("123"),
                         "https://example.org/example", "https://example.org/example", "jane.doe@example.org",
-                        "https://example.org/example", "https://example.org/example", "https://example.org/example")));
+                        "https://example.org/example", "https://example.org/example", "https://example.org/example", "https://example.org/example")));
         assertThrows(IllegalStateException.class,
                 () -> urlValidatorImpl.validatePostRequestInputParameters(new UrlDto(new BigInteger("123"),
                         "https://example.org/example", "https://example.org/example", "jane.doe@example.org", "jane",
-                        "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}", "https://example.org/example")));
+                        "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}", "https://example.org/example", "https://example.org/example")));
 
     }
 

@@ -26,5 +26,6 @@ public class Url implements Serializable {
     private BigInteger id;
     private String urlId;
     private String urlName;
+    private String shortUrlName;
     private String userName;
 }

@@ -1,9 +1,0 @@
-spring:
-  datasource:
-    url: 'jdbc:h2:mem:url'
-    username: sa
-    password: null
-    driverClassName: org.h2.Driver
-  jpa:
-    hibernate:
-      ddl-auto: create-drop

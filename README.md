@@ -41,5 +41,22 @@ http://localhost:9031/
 # Zipkin (Distributed Tracing)
 http://localhost:9411/zipkin/
 
+cd /Users/pushkarchauhan91/Documents/software/kafka/kafka_2.13-3.1.0
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+cd /Users/pushkarchauhan91/Documents/software/kafka/kafka_2.13-3.1.0
+bin/kafka-server-start.sh config/server.properties
+
+cd /Users/pushkarchauhan91/Documents/software/zipkin
+java -jar zipkin.jar
+
+cd /Users/pushkarchauhan91/Documents/intellij/wissen/parent/serviceregistry/target
+java -jar serviceregistry-1.0-SNAPSHOT.jar --spring.profiles.active=eureka-1
+
+cd /Users/pushkarchauhan91/Documents/intellij/wissen/parent/serviceregistry/target
+java -jar serviceregistry-1.0-SNAPSHOT.jar --spring.profiles.active=eureka-2
+
+cd /Users/pushkarchauhan91/Documents/intellij/wissen/parent/serviceregistry/target
+java -jar serviceregistry-1.0-SNAPSHOT.jar --spring.profiles.active=eureka-3
 
 

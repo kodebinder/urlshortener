@@ -4,3 +4,7 @@ https://app.diagrams.net/#G1S64lRURTeBwdn1cdM_3W78Pg5Gn6qtmU
 Database Design
 https://app.diagrams.net/#G1diJnaCbrRuZFH-1R_mardLNici31XJou
 
+Capacity Estimation and Constraints
+https://docs.google.com/spreadsheets/d/1BnwJGbZDAYdstf7wygeR5_hhB4uhKaNIX6jl2FQoC_4/edit#gid=1184675056
+https://www.educative.io/courses/grokking-the-system-design-interview/m2ygV4E81AR#3.-Capacity-Estimation-and-Constraints
+

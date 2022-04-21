@@ -97,6 +97,12 @@
             <artifactId>kafka-clients</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy-dep</artifactId>
+            <version>1.12.9</version>
+        </dependency>
+
     </dependencies>
 
 </project>

@@ -8,3 +8,5 @@ Capacity Estimation and Constraints
 https://docs.google.com/spreadsheets/d/1BnwJGbZDAYdstf7wygeR5_hhB4uhKaNIX6jl2FQoC_4/edit#gid=1184675056
 https://www.educative.io/courses/grokking-the-system-design-interview/m2ygV4E81AR#3.-Capacity-Estimation-and-Constraints
 
+Mongodb Sharding
+https://www.youtube.com/watch?v=mjSNKjTzeao
